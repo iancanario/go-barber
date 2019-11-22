@@ -1,0 +1,41 @@
+Variaveis 
+
+->app
+  -> Controllers
+	  ->SessioController
+		schema --> envia estrutura de validação (Yup)
+		  email --> e-mail do usuario
+		  password --> senha do usuario
+		user --> dados do usuario que está logando
+		  id --> id do usuario logado
+		  token --> dados do usuario criptografados
+
+	  ->UserController
+		schema --> envia estrutura de validação (Yup)
+		  name --> nome do usuario
+		  email --> email do usuario
+		  oldPassword --> senha antiga do usuario(update) 
+		  password --> senha do usuario
+		  confirmPassword --> confirmação de senha do usuario
+		userExist -> usuario ja existente no banco de dados
+	
+  -middlewares
+	->auth
+	    authHeader --> token recurado do header da aplicação
+	    decoded --> token descriptografado
+
+  -models
+	->User
+	    name --> nome do usuario
+	    email --> email do usuario
+	    password --> senha do usuario
+	    password_hash --> senha do usuario criptografada
+	    provider --> 'true' para Usuario pago, 'false' para usuario gratuito
+
+->config
+	->auth
+	  secret --> chave de criptografia
+	  expiresIn --> tempo para Token expirar
+	       
+
+
