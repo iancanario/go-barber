@@ -1,4 +1,4 @@
 export default {
-  secret: 'e060442399a038ff1a04fe6ffc757103', // Chave de criptografia
+  secret: process.env.APP_SECRET, // Chave de criptografia
   expiresIn: '7d' // Tempo para Token expirar
 };
